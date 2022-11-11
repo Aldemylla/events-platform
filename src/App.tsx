@@ -1,9 +1,11 @@
-function App() {
+import Router from './router';
 
+function App() {
   return (
-    <div className="App">
+    <div className='App'>
+      <Router />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
