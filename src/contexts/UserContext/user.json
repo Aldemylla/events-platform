@@ -1,0 +1,24 @@
+{
+  "name": "José",
+  "email": "jose@email.com",
+  "cpf": "",
+  "phone": "",
+  "events": [
+    {
+      "organizer": {
+        "name": "Spaceflow",
+        "email": "spaceflow@email.com",
+        "phone": ""
+      },
+      "title": "What Tenants Actually Want",
+      "description": "To establish project management within the organization, it is important to provide a solid fundamentals of project management knowledge and methodology. This includes optimizing project management initiation and planning.",
+      "date": "2022-11-11 07:00",
+      "local": "Lorem ipsum, São Paulo",
+      "banner": "../assets/images/events/1667799628675.jpeg",
+      "categories": ["presential"],
+      "totalVacancies": 520,
+      "ticketPrice": 14,
+      "id": 0
+    }
+  ]
+}
