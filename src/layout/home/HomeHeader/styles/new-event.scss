@@ -1,0 +1,18 @@
+.home__header > .new-event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  place-self: flex-end;
+
+  padding: 2rem 5rem;
+
+  background: var(--dark-blue);
+
+  color: var(--white);
+  font-weight: 600;
+  font-size: var(--font-large);
+  text-decoration: none;
+  text-align: center;
+
+  border-radius: 0.8rem;
+}

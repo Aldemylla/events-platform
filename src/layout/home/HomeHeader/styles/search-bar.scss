@@ -1,0 +1,37 @@
+.home__header > .search-bar__container {
+  height: 5rem;
+  width: min-content;
+
+  display: flex;
+  align-items: center;
+
+  padding: 2rem;
+  margin: auto;
+
+  background: var(--bg-gray);
+  border: 1px solid var(--gray);
+  border-radius: 10rem;
+
+  input {
+    font-size: var(--font-large);
+
+    background: transparent;
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  svg {
+    color: var(--dark-gray);
+    width: 2rem;
+    height: auto;
+
+    transition: transform 0.1s;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import './city-select.scss';
+@import './search-bar.scss';
+@import './new-event.scss';
+
+.home__header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 3rem;
+}

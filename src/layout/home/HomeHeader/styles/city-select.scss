@@ -1,0 +1,38 @@
+.home__header > .city-select__container {
+  p {
+    font-size: var(--font-small);
+    color: var(--gray);
+  }
+
+  .city-select {
+    display: flex;
+    align-items: center;
+
+    &__control {
+      max-width: 25rem;
+
+      border: none;
+      box-shadow: none;
+    }
+
+    &__input:not([value='']) {
+      min-width: 10rem !important;
+    }
+
+    &__indicator {
+      padding: 0;
+
+      &-separator {
+        display: none;
+      }
+    }
+
+    &__option--is-selected {
+      background-color: var(--dark-blue);
+    }
+
+    svg {
+      color: var(--dark-gray);
+    }
+  }
+}

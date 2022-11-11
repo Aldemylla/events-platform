@@ -6,6 +6,8 @@ import { Icon } from '@iconify/react';
 
 import citiesOptions from '../../../mocks/cities';
 
+import './styles/styles.scss';
+
 export default function HomeHeader() {
   const searchInput = useRef<HTMLInputElement>(null);
   const selectCityMaxLength = 30;
