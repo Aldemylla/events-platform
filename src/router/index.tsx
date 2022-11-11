@@ -7,6 +7,7 @@ export default function Router() {
     <BrowserRouter>
       <Switch>
         <Route path='/' element={<Home />} />
+        <Route path='/event/new' element={<h1>New event</h1>}></Route>
         <Route path='*' element={<h1>Not Found!</h1>} />
       </Switch>
     </BrowserRouter>

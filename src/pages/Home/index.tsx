@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 
+import HomeHeader from '../../layout/home/HomeHeader';
+
 import EventsContextProvider, {
   EventsContext,
   EventsContextType,
@@ -8,7 +10,11 @@ import EventsContextProvider, {
 function HomeContainer() {
   const { eventsReducer, eventsDispatch } = useContext(EventsContext) as EventsContextType;
 
-  return <div></div>;
+  return (
+    <>
+      <HomeHeader />
+    </>
+  );
 }
 
 export default function Home() {
