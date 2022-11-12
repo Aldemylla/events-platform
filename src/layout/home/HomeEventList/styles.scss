@@ -32,4 +32,14 @@
     font-weight: 600;
     margin-bottom: 2rem;
   }
+
+  @media only screen and (max-width: '380px') {
+    ul {
+      justify-content: center;
+    }
+    h3 {
+      font-size: var(--font-small);
+      text-align: center;
+    }
+  }
 }
