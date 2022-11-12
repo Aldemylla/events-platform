@@ -1,0 +1,83 @@
+.event_card {
+  width: 330px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition: transform 0.12s ease-in-out;
+  cursor: default;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &.past {
+    filter: grayscale(0.9) brightness(0.85);
+  }
+
+  img {
+    width: inherit;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .infos {
+    background: var(--bg-gray);
+    border-radius: 0 0 8px 8px;
+    padding: 10px;
+    color: var(--dark-gray);
+    display: grid;
+    gap: 30px;
+
+    .more-infos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      nav {
+        display: flex;
+        gap: 10px;
+
+        svg {
+          width: 20px;
+          height: auto;
+
+          color: var(--gray);
+
+          cursor: pointer;
+
+          &.status {
+            &--pending {
+              color: var(--pending);
+            }
+
+            &--confirmed {
+              color: var(--confirmed);
+            }
+
+            &--canceled {
+              color: var(--canceled);
+            }
+          }
+        }
+
+        .share-button {
+          display: flex;
+        }
+      }
+    }
+
+    h2 {
+      font-size: var(--font-small);
+      font-weight: 500;
+    }
+  }
+}
