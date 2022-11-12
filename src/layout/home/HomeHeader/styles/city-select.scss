@@ -13,6 +13,7 @@
 
       border: none;
       box-shadow: none;
+      cursor: pointer;
     }
 
     &__input:not([value='']) {
@@ -33,6 +34,10 @@
 
     svg {
       color: var(--dark-gray);
+    }
+
+    @media only screen and (max-width: '1024px') {
+      justify-content: center;
     }
   }
 }

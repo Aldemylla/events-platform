@@ -1,9 +1,10 @@
 .home__header > .search-bar__container {
   height: 5rem;
-  width: min-content;
+  width: 350px;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   padding: 2rem;
   margin: auto;
@@ -11,6 +12,13 @@
   background: var(--bg-gray);
   border: 1px solid var(--gray);
   border-radius: 10rem;
+
+  transition: box-shadow 0.2s;
+
+  &:focus-within,
+  &:hover {
+    box-shadow: 0 0 5px 0px var(--gray);
+  }
 
   input {
     font-size: var(--font-large);
@@ -32,6 +40,16 @@
     &:hover {
       transform: scale(1.2);
       cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: '1024px') {
+    width: 100%;
+    max-width: 400px;
+    height: 4rem;
+
+    input {
+      font-size: var(--font-medium);
     }
   }
 }
