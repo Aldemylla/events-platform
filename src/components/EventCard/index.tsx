@@ -1,20 +1,24 @@
 import { Icon } from '@iconify/react';
 import { MouseEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { EventStatus } from '../../contexts/EventsContext/types';
+import { UserType } from '../../contexts/UserContext/types';
 
 import './styles.scss';
 
 type EventCardProps = {
   banner: string;
-  date: string;
+  date: Date;
   title: string;
   local: string;
   companyName: string;
   totalVacancies: number;
   past: boolean;
   id: number;
-  myEventType?: 'common' | 'empresarial';
-  status?: 'pending' | 'confirmed' | 'canceled';
+  myEventType?: UserType;
+  status?: EventStatus;
+  onClickCapture: (event: any) => void;
 };
 
 export default function EventCard({
@@ -28,14 +32,9 @@ export default function EventCard({
   id,
   myEventType,
   status,
+  onClickCapture,
 }: EventCardProps) {
-  function copyEventLinkToClipboard(event: MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
-
-    navigator.clipboard.writeText(`http://localhost:5173/event/${id}`);
-
-    alert('Link compartilhável copiado!');
-  }
+  const navigate = useNavigate();
 
   const statusIcons = {
     pending: 'ic:round-done',
@@ -45,12 +44,29 @@ export default function EventCard({
 
   const statusIcon = status ? statusIcons[status] : '';
 
+  function copyEventLinkToClipboard(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+
+    navigator.clipboard.writeText(`http://localhost:5173/event/${id}`);
+
+    alert('Link compartilhável copiado!');
+  }
+
+  function navigateToEventDetails() {
+    navigate(`/event/${id}`);
+  }
+
   return (
-    <Link to={`/event/${id}`} className={`event_card ${past ? 'past' : ''}`}>
+    <div
+      role='link'
+      className={`event_card ${past ? 'past' : ''}`}
+      onClick={navigateToEventDetails}
+      onClickCapture={onClickCapture}
+    >
       <img src={`/images/mocks/events/${banner}`} alt='img' />
       <main className='infos'>
         <header>
-          <h2>{date}</h2>
+          <h2>{String(date)}</h2>
           <h1>{title}</h1>
         </header>
         <section className='more-infos'>
@@ -80,6 +96,6 @@ export default function EventCard({
           </nav>
         </section>
       </main>
-    </Link>
+    </div>
   );
 }

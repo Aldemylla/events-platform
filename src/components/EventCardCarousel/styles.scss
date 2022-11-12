@@ -1,0 +1,12 @@
+.slick-list {
+  overflow: initial;
+  width: calc(330px + 40px);
+}
+
+.slick-dots li {
+  margin: 0;
+
+  button:before {
+    font-size: 10px;
+  }
+}
