@@ -1,0 +1,35 @@
+.home__events-list {
+  margin-top: 3rem;
+  &.categories ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    li {
+      h3 {
+        cursor: pointer;
+      }
+
+      &.selected h3 {
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 0.2rem;
+          border-radius: 1rem;
+          background: var(--dark-gray);
+          position: absolute;
+          bottom: -0.5rem;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: var(--font-large);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+}

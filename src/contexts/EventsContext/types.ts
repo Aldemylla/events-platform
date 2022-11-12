@@ -1,6 +1,7 @@
 import { Dispatch } from 'react';
 
 export type EventStatus = 'pending' | 'confirmed' | 'canceled'
+export type EventCategories = 'presential' | 'online' | 'free'
 
 export type Event = {
   organizer: {
@@ -13,7 +14,7 @@ export type Event = {
   date: Date,
   local: string,
   banner: string,
-  categories: string[],
+  categories: EventCategories[],
   totalVacancies: number,
   ticketPrice: number,
   id: number
