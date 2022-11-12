@@ -3,6 +3,7 @@
   "email": "jose@email.com",
   "cpf": "",
   "phone": "",
+  "accountType": "",
   "events": [
     {
       "organizer": {
@@ -14,7 +15,7 @@
       "description": "To establish project management within the organization, it is important to provide a solid fundamentals of project management knowledge and methodology. This includes optimizing project management initiation and planning.",
       "date": "2022-11-11 07:00",
       "local": "Lorem ipsum, São Paulo",
-      "banner": "../assets/images/events/1667799628675.jpeg",
+      "banner": "1667799628675.jpeg",
       "categories": ["presential"],
       "totalVacancies": 520,
       "ticketPrice": 14,
