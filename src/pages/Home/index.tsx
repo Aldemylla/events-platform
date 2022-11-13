@@ -1,9 +1,8 @@
 import HomeHeader from '../../layout/home/HomeHeader';
 
-import EventsContextProvider from '../../contexts/EventsContext';
 import HomeEventList from '../../layout/home/HomeEventList';
 
-function HomeContainer() {
+export default function Home() {
   return (
     <>
       <HomeHeader />
@@ -12,13 +11,5 @@ function HomeContainer() {
         <HomeEventList type='past' />
       </main>
     </>
-  );
-}
-
-export default function Home() {
-  return (
-    <EventsContextProvider>
-      <HomeContainer />
-    </EventsContextProvider>
   );
 }

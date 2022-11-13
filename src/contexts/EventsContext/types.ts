@@ -28,9 +28,11 @@ export type EventsContextType = {
 
 export type EventsReducerState = {
   events: Event[];
+  currentEvent: Event | null
 };
 
 export type EventsReducerAction =
   | { type: 'EVENT_CREATE'; payload: Event }
   | { type: 'EVENT_SEARCH'; searchBy: 'title' | 'local'; payload: string }
+  | { type: 'EVENT_CURRENT_UPDATE'; payload: number }
   | { type: 'RESET' };

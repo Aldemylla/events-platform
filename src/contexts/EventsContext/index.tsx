@@ -15,6 +15,7 @@ export const EventsContext = createContext<EventsContextType>(eventsContextDefau
 export default function EventsContextProvider({ children }: { children: ReactNode }) {
   const initialState: EventsReducerState = {
     events: EVENTS,
+    currentEvent: null,
   };
 
   function reducer(state: EventsReducerState, action: EventsReducerAction) {
@@ -42,6 +43,12 @@ export default function EventsContextProvider({ children }: { children: ReactNod
             ),
           };
         }
+
+      case 'EVENT_CURRENT_UPDATE':
+        return {
+          ...state,
+          currentEvent: state.events.find((event) => event.id === action.payload) || null,
+        };
 
       case 'RESET':
         return initialState;
