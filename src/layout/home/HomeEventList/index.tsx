@@ -1,6 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
+
+import { isPast } from 'date-fns';
+
 import EventCardCarousel from '../../../components/EventCardCarousel';
 import { EventsContext } from '../../../contexts/EventsContext';
+
 import { EventCategories, EventsContextType } from '../../../contexts/EventsContext/types';
 
 import './styles.scss';
@@ -10,7 +14,7 @@ type ListCategory = 'all' | EventCategories;
 export default function HomeEventList({ type }: { type: 'categories' | 'past' }) {
   const { eventsReducer } = useContext(EventsContext) as EventsContextType;
   const { events } = eventsReducer;
-  const pastEvents = events.filter((event) => isInThePast(event.date));
+  const pastEvents = events.filter((event) => isPast(event.date));
 
   const [selectedCategory, setSelectedCategory] = useState<ListCategory>('all');
   const [selectedEvents, setSelectedEvents] = useState(events);
@@ -18,17 +22,6 @@ export default function HomeEventList({ type }: { type: 'categories' | 'past' })
   useEffect(() => {
     categoryHandler(selectedCategory);
   }, [events]);
-
-  function isInThePast(initialDate: Date) {
-    function parseDate(date: Date) {
-      return Date.parse(String(date));
-    }
-
-    const today = parseDate(new Date());
-    const date = parseDate(initialDate);
-
-    return date < today;
-  }
 
   function categoryHandler(category: ListCategory) {
     setSelectedCategory(category);

@@ -2,6 +2,8 @@ import { Icon } from '@iconify/react';
 import { MouseEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { useFormatDate } from '../../hooks/useFormatDate';
+
 import { EventStatus } from '../../contexts/EventsContext/types';
 import { UserType } from '../../contexts/UserContext/types';
 
@@ -35,6 +37,7 @@ export default function EventCard({
   onClickCapture,
 }: EventCardProps) {
   const navigate = useNavigate();
+  const [formattedDate] = useFormatDate(date || new Date());
 
   const statusIcons = {
     pending: 'ic:round-done',
@@ -66,7 +69,7 @@ export default function EventCard({
       <img src={`/images/mocks/events/${banner}`} alt='img' />
       <main className='infos'>
         <header>
-          <h2>{String(date)}</h2>
+          <h2>{formattedDate}</h2>
           <h1>{title}</h1>
         </header>
         <section className='more-infos'>

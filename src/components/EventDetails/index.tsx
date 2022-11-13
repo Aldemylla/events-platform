@@ -1,4 +1,7 @@
+import { useFormatDate } from '../../hooks/useFormatDate';
+
 import { Icon } from '@iconify/react';
+
 import { EventDetailsProps } from './types';
 
 import './styles.scss';
@@ -12,13 +15,15 @@ export default function EventDetails({
   totalVacancies,
   description,
 }: EventDetailsProps) {
+  const [formattedDate] = useFormatDate(date || new Date());
+
   return (
     <main className='event-details'>
       <img className='banner' src={`/images/mocks/events/${banner}`} alt={title} />
       <section className='infos'>
         <h1 className='title'>{title}</h1>
         <hgroup>
-          <h2>{String(date)}</h2>
+          <h2>{formattedDate}</h2>
           <h2>
             <Icon icon='ic:round-location-on' />
             {local}
