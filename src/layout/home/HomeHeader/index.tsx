@@ -1,4 +1,4 @@
-import { MouseEvent, useRef } from 'react';
+import { MouseEvent, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 
@@ -7,8 +7,10 @@ import { Icon } from '@iconify/react';
 import citiesOptions from '../../../mocks/cities';
 
 import './styles/styles.scss';
+import { EventsContext, EventsContextType } from '../../../contexts/EventsContext';
 
 export default function HomeHeader() {
+  const { eventsDispatch } = useContext(EventsContext) as EventsContextType;
   const searchInput = useRef<HTMLInputElement>(null);
   const selectCityMaxLength = 30;
 
@@ -18,6 +20,10 @@ export default function HomeHeader() {
 
   function searchEvent(event: MouseEvent<SVGSVGElement>) {
     event.stopPropagation();
+  }
+
+  function localEventsSearch(value: string) {
+    eventsDispatch({ type: 'EVENT_LOCAL_SEARCH', payload: value });
   }
 
   return (
@@ -32,12 +38,14 @@ export default function HomeHeader() {
             placeholder='Selecione uma cidade...'
             noOptionsMessage={() => 'Sem resultados.'}
             options={citiesOptions}
+            onChange={(event) => localEventsSearch(event?.label || '')}
             onInputChange={(inputValue) =>
               inputValue.length <= selectCityMaxLength
                 ? inputValue
                 : inputValue.slice(0, selectCityMaxLength)
             }
             isSearchable
+            isClearable
           />
         </div>
       </section>

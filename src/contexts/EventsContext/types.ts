@@ -27,7 +27,7 @@ export type EventsContextType = {
 };
 
 export type EventsReducerState = {
-  events: Event[]
+  events: Event[],
 };
 
-export type EventsReducerAction = { type: 'EVENT_CREATE'; payload: Event } | { type: 'RESET' };
+export type EventsReducerAction = { type: 'EVENT_CREATE'; payload: Event } | { type: 'EVENT_LOCAL_SEARCH'; payload: string } | { type: 'RESET' };

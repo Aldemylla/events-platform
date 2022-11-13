@@ -45,7 +45,7 @@ export default function EventCardCarousel({
     [swiped]
   );
 
-  return (
+  return events.length > 0 ? (
     <Slider {...settings} onSwipe={handleSwiped}>
       {events.map((event) => (
         <EventCard
@@ -64,5 +64,7 @@ export default function EventCardCarousel({
         />
       ))}
     </Slider>
+  ) : (
+    <h1>Nenhum evento encontrado.</h1>
   );
 }

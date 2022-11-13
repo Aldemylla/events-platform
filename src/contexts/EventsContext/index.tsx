@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useReducer } from 'react';
 
-import EVENTS from './events.json';
+import EVENTS from './events';
 
 import { EventsContextType, EventsReducerState, EventsReducerAction } from './types';
 export type { EventsContextType } from './types';
@@ -23,6 +23,13 @@ export default function EventsContextProvider({ children }: { children: ReactNod
         return {
           ...state,
           events: [...state.events, action.payload],
+        };
+      case 'EVENT_LOCAL_SEARCH':
+        return {
+          ...state,
+          events: initialState.events.filter((event) =>
+            event.local.toLowerCase().includes(action.payload.toLowerCase())
+          ),
         };
 
       case 'RESET':
