@@ -24,13 +24,24 @@ export default function EventsContextProvider({ children }: { children: ReactNod
           ...state,
           events: [...state.events, action.payload],
         };
-      case 'EVENT_LOCAL_SEARCH':
-        return {
-          ...state,
-          events: initialState.events.filter((event) =>
-            event.local.toLowerCase().includes(action.payload.toLowerCase())
-          ),
-        };
+
+      case 'EVENT_SEARCH':
+        if (action.searchBy === 'local') {
+          return {
+            ...state,
+            events: initialState.events.filter((event) =>
+              event.local.toLowerCase().includes(action.payload.toLowerCase())
+            ),
+          };
+        }
+        if (action.searchBy === 'title') {
+          return {
+            ...state,
+            events: initialState.events.filter((event) =>
+              event.title.toLowerCase().includes(action.payload.toLowerCase())
+            ),
+          };
+        }
 
       case 'RESET':
         return initialState;

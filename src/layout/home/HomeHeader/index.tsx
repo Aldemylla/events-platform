@@ -1,4 +1,4 @@
-import { MouseEvent, useContext, useRef } from 'react';
+import { KeyboardEventHandler, MouseEvent, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 
@@ -18,12 +18,16 @@ export default function HomeHeader() {
     searchInput.current?.focus();
   }
 
-  function searchEvent(event: MouseEvent<SVGSVGElement>) {
-    event.stopPropagation();
+  function searchEventByLocal(value: string) {
+    eventsDispatch({ type: 'EVENT_SEARCH', searchBy: 'local', payload: value });
   }
 
-  function localEventsSearch(value: string) {
-    eventsDispatch({ type: 'EVENT_LOCAL_SEARCH', payload: value });
+  function searchEventByTitle() {
+    eventsDispatch({
+      type: 'EVENT_SEARCH',
+      searchBy: 'title',
+      payload: searchInput.current?.value || '',
+    });
   }
 
   return (
@@ -38,7 +42,7 @@ export default function HomeHeader() {
             placeholder='Selecione uma cidade...'
             noOptionsMessage={() => 'Sem resultados.'}
             options={citiesOptions}
-            onChange={(event) => localEventsSearch(event?.label || '')}
+            onChange={(event) => searchEventByLocal(event?.label || '')}
             onInputChange={(inputValue) =>
               inputValue.length <= selectCityMaxLength
                 ? inputValue
@@ -50,8 +54,20 @@ export default function HomeHeader() {
         </div>
       </section>
       <section className='search-bar__container' onClick={searchInputFocus}>
-        <input type='search' placeholder='Nome do evento...' ref={searchInput} maxLength={200} />
-        <Icon icon='ic:search' onClick={searchEvent} />
+        <input
+          type='search'
+          placeholder='Nome do evento...'
+          ref={searchInput}
+          maxLength={200}
+          onKeyDown={(event) => event.key === 'Enter' && searchEventByTitle()}
+        />
+        <Icon
+          icon='ic:search'
+          onClick={(event) => {
+            event.stopPropagation();
+            searchEventByTitle();
+          }}
+        />
       </section>
       <Link to='/event/new' className='new-event'>
         Registrar evento
