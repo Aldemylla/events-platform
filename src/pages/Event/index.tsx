@@ -2,6 +2,7 @@ import { useContext, useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import EventDetails from '../../components/EventDetails';
 import { EventsContext, EventsContextType } from '../../contexts/EventsContext';
+import EventPagesHeader from '../../layout/EventPagesHeader';
 
 export default function Event() {
   const { eventsReducer, eventsDispatch } = useContext(EventsContext) as EventsContextType;
@@ -16,7 +17,7 @@ export default function Event() {
 
   return (
     <>
-      <header></header>
+      <EventPagesHeader page='EVENTO' />
       <EventDetails
         {...{ banner, title, date, local, totalVacancies, description }}
         companyName={organizer?.name || ''}
