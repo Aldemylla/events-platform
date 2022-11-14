@@ -42,7 +42,7 @@ export default [
     "title": "Virtual Class: Safety Management System (SMS) Basic",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus, tortor non accumsan lacinia, lacus metus ullamcorper tortor, vel porttitor mi ligula porttitor lacus. Aenean iaculis placerat arcu, quis viverra urna blandit sit amet. Suspendisse tortor tortor, dapibus et mauris eget, ultricies condimentum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis purus et quam facilisis, in scelerisque felis vehicula. Phasellus auctor dapibus dapibus. Morbi a elit facilisis, commodo ex non, ultricies nunc. Suspendisse potenti. Fusce et cursus erat. Integer semper finibus facilisis. Vestibulum blandit nisl elit, sed tincidunt diam facilisis ac. Donec purus quam, pharetra sed augue ut, convallis facilisis velit. Mauris suscipit est non est bibendum, et sagittis quam interdum.",
     "date": new Date("2022-11-15 14:30"),
-    "local": "Teatro Lorem Ipsum, Curitiba",
+    "local": "Online",
     "banner": "1647941715352.png",
     "categories": ["online"] as EventCategories[],
     "totalVacancies": 1000,
@@ -55,10 +55,10 @@ export default [
       "email": "leslie@email.com",
       "phone": ""
     },
-    "title": "Virtual Class: Safety Management System (SMS) Basic",
+    "title": "Challenger Customer: Business Book Club",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus, tortor non accumsan lacinia, lacus metus ullamcorper tortor, vel porttitor mi ligula porttitor lacus. Aenean iaculis placerat arcu, quis viverra urna blandit sit amet. Suspendisse tortor tortor, dapibus et mauris eget, ultricies condimentum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis purus et quam facilisis, in scelerisque felis vehicula. Phasellus auctor dapibus dapibus. Morbi a elit facilisis, commodo ex non, ultricies nunc. Suspendisse potenti. Fusce et cursus erat. Integer semper finibus facilisis. Vestibulum blandit nisl elit, sed tincidunt diam facilisis ac. Donec purus quam, pharetra sed augue ut, convallis facilisis velit. Mauris suscipit est non est bibendum, et sagittis quam interdum.",
     "date": new Date("2022-11-16 18:30"),
-    "local": "Teatro Lorem Ipsum, São Paulo",
+    "local": "Online",
     "banner": "1652733791956.jpeg",
     "categories": ["online", "free"] as EventCategories[],
     "totalVacancies": 1000,
@@ -80,5 +80,53 @@ export default [
     "totalVacancies": 300,
     "ticketPrice": 30,
     "id": 4
+  },
+  {
+    "organizer": {
+      "name": "Verhaert | Masters in Innovation",
+      "email": "verhaert@email.com",
+      "phone": ""
+    },
+    "title": "InnoDays 2022",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus, tortor non accumsan lacinia, lacus metus ullamcorper tortor, vel porttitor mi ligula porttitor lacus. Aenean iaculis placerat arcu, quis viverra urna blandit sit amet. Suspendisse tortor tortor, dapibus et mauris eget, ultricies condimentum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis purus et quam facilisis, in scelerisque felis vehicula. Phasellus auctor dapibus dapibus. Morbi a elit facilisis, commodo ex non, ultricies nunc. Suspendisse potenti. Fusce et cursus erat. Integer semper finibus facilisis. Vestibulum blandit nisl elit, sed tincidunt diam facilisis ac. Donec purus quam, pharetra sed augue ut, convallis facilisis velit. Mauris suscipit est non est bibendum, et sagittis quam interdum.",
+    "date": new Date("2022-11-19 13:00"),
+    "local": "Teatro Lorem Ipsum, São Paulo",
+    "banner": "1664381437006.png",
+    "categories": ["presential", "free"] as EventCategories[],
+    "totalVacancies": 400,
+    "ticketPrice": 0,
+    "id": 5
+  },
+  {
+    "organizer": {
+      "name": "EURACTIV",
+      "email": "euractiv@email.com",
+      "phone": ""
+    },
+    "title": "Virtual: The AI Act - What costs for SMEs?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus, tortor non accumsan lacinia, lacus metus ullamcorper tortor, vel porttitor mi ligula porttitor lacus. Aenean iaculis placerat arcu, quis viverra urna blandit sit amet. Suspendisse tortor tortor, dapibus et mauris eget, ultricies condimentum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis purus et quam facilisis, in scelerisque felis vehicula. Phasellus auctor dapibus dapibus. Morbi a elit facilisis, commodo ex non, ultricies nunc. Suspendisse potenti. Fusce et cursus erat. Integer semper finibus facilisis. Vestibulum blandit nisl elit, sed tincidunt diam facilisis ac. Donec purus quam, pharetra sed augue ut, convallis facilisis velit. Mauris suscipit est non est bibendum, et sagittis quam interdum.",
+    "date": new Date("2022-11-17 18:30"),
+    "local": "Online",
+    "banner": "1664789859812.jpeg",
+    "categories": ["online", "free"] as EventCategories[],
+    "totalVacancies": 1000,
+    "ticketPrice": 0,
+    "id": 6
+  },
+  {
+    "organizer": {
+      "name": "Worldline",
+      "email": "worldline@email.com",
+      "phone": ""
+    },
+    "title": "A Glimpse of the Future",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus, tortor non accumsan lacinia, lacus metus ullamcorper tortor, vel porttitor mi ligula porttitor lacus. Aenean iaculis placerat arcu, quis viverra urna blandit sit amet. Suspendisse tortor tortor, dapibus et mauris eget, ultricies condimentum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis purus et quam facilisis, in scelerisque felis vehicula. Phasellus auctor dapibus dapibus. Morbi a elit facilisis, commodo ex non, ultricies nunc. Suspendisse potenti. Fusce et cursus erat. Integer semper finibus facilisis. Vestibulum blandit nisl elit, sed tincidunt diam facilisis ac. Donec purus quam, pharetra sed augue ut, convallis facilisis velit. Mauris suscipit est non est bibendum, et sagittis quam interdum.",
+    "date": new Date("2022-11-15 09:00"),
+    "local": "Teatro Lorem Ipsum, Rio de Janeiro",
+    "banner": "1665761263460.jpeg",
+    "categories": ["presential"] as EventCategories[],
+    "totalVacancies": 250,
+    "ticketPrice": 30,
+    "id": 7
   },
 ]

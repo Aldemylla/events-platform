@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useReducer } from 'react';
 
-import USER from './user';
+import USER from '../../mocks/user';
 
 import { UserContextType, UserReducerState, UserReducerAction, User } from './types';
 export type { UserContextType } from './types';

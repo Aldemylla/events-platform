@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useReducer } from 'react';
 
-import EVENTS from './events';
+import EVENTS from '../../mocks/events';
 
 import { EventsContextType, EventsReducerState, EventsReducerAction } from './types';
 export type { EventsContextType } from './types';
