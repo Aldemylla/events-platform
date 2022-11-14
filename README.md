@@ -26,6 +26,7 @@ This project was developed with:
 - [yup](https://github.com/jquense/yup)
 - [react-select](https://react-select.com/)
 - [react-slick](https://react-slick.neostack.com/)
+- [date-fns](https://date-fns.org/)
 
 ## 💻 Run
 
