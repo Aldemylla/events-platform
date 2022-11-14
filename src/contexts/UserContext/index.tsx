@@ -19,7 +19,7 @@ export default function UserContextProvider({ children }: { children: ReactNode 
 
   function reducer(state: UserReducerState, action: UserReducerAction) {
     switch (action.type) {
-      case 'USER_CREATE':
+      case 'USER_CREATE': {
         const { name, email, cpf, phone, type } = action.payload;
 
         return {
@@ -33,8 +33,9 @@ export default function UserContextProvider({ children }: { children: ReactNode 
             events: [],
           },
         };
+      }
 
-      case 'EVENT_JOIN':
+      case 'EVENT_JOIN': {
         const event = action.payload;
         !action.payload.categories.includes('free')
           ? (event.status = 'pending')
@@ -47,6 +48,21 @@ export default function UserContextProvider({ children }: { children: ReactNode 
             events: state.user.events ? [...state.user.events, event] : [event],
           },
         };
+      }
+
+      case 'EVENT_UPDATE_STATUS': {
+        const { eventId, status } = action.payload;
+        const event = state.user.events[eventId];
+        event.status = status;
+
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            events: state.user.events ? [...state.user.events, event] : [event],
+          },
+        };
+      }
 
       case 'RESET':
         return initialState;

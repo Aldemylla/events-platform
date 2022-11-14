@@ -1,0 +1,82 @@
+.event__main-box > .status {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+
+  > h1 {
+    font-size: var(--font-huge);
+
+    .dynamically-status {
+      font-size: var(--font-huge);
+    }
+  }
+
+  > h2 {
+    font-size: var(--font-small);
+    font-weight: 500;
+  }
+
+  &.confirmed {
+    .dynamically-status {
+      color: var(--confirmed);
+    }
+  }
+
+  &.pending {
+    .dynamically-status {
+      color: var(--pending);
+    }
+
+    .pix__container {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+
+      p {
+        font-size: var(--font-huge);
+        font-weight: 700;
+      }
+
+      svg {
+        width: 5rem;
+        height: auto;
+      }
+    }
+
+    .qr-code {
+      width: 80%;
+      height: auto;
+
+      border: 1px solid var(--gray);
+
+      border-radius: 8px;
+    }
+
+    .mock-payment {
+      color: var(--confirmed);
+      font-weight: 600;
+      font-size: var(--font-tiny);
+      text-decoration: underline;
+      text-align: center;
+
+      cursor: pointer;
+    }
+  }
+
+  &.confirmed {
+    .dynamically-status {
+      color: var(--confirmed);
+    }
+  }
+
+  &.canceled {
+    .dynamically-status {
+      color: var(--canceled);
+    }
+
+    > h2 {
+      font-size: var(--font-large);
+      font-weight: 600;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
 
-import { Event } from '../EventsContext/types';
+import { Event, EventStatus } from '../EventsContext/types';
 
 export type UserType = 'common' | 'empresarial';
 
@@ -28,4 +28,5 @@ export type UserReducerState = {
 export type UserReducerAction =
   | { type: 'USER_CREATE'; payload: UserInfos }
   | { type: 'EVENT_JOIN'; payload: Event }
+  | { type: 'EVENT_UPDATE_STATUS'; payload: { eventId: number; status: EventStatus } }
   | { type: 'RESET' };
