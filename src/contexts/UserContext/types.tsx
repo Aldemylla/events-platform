@@ -1,24 +1,31 @@
 import { Dispatch } from 'react';
+
 import { Event } from '../EventsContext/types';
 
 export type UserType = 'common' | 'empresarial';
 
-export type User = {
+export type UserInfos = {
   name: string;
   email: string;
   cpf: string;
   phone: string;
-  type: UserType;
-  events: Event[];
+  type: UserType | null;
 };
+
+export interface User extends UserInfos {
+  events: Event[];
+}
 
 export type UserContextType = {
   userReducer: UserReducerState;
-  dispatchUserReducer: Dispatch<UserReducerAction>;
+  userDispatch: Dispatch<UserReducerAction>;
 };
 
 export type UserReducerState = {
   user: User;
 };
 
-export type UserReducerAction = { type: 'EVENT_JOIN'; payload: Event } | { type: 'RESET' };
+export type UserReducerAction =
+  | { type: 'USER_CREATE'; payload: UserInfos }
+  | { type: 'EVENT_JOIN'; payload: Event }
+  | { type: 'RESET' };
