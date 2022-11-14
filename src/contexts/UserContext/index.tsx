@@ -52,16 +52,19 @@ export default function UserContextProvider({ children }: { children: ReactNode 
 
       case 'EVENT_UPDATE_STATUS': {
         const { eventId, status } = action.payload;
-        const event = state.user.events[eventId];
-        event.status = status;
+        const event = state.user.events.find((event) => event.id === eventId);
 
-        return {
-          ...state,
-          user: {
-            ...state.user,
-            events: state.user.events ? [...state.user.events, event] : [event],
-          },
-        };
+        if (event) {
+          event.status = status;
+
+          return {
+            ...state,
+            user: {
+              ...state.user,
+              events: state.user.events ? [...state.user.events, event] : [event],
+            },
+          };
+        }
       }
 
       case 'RESET':

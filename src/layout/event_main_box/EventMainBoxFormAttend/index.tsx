@@ -1,5 +1,4 @@
-import { Fragment } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Fragment, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -29,9 +28,7 @@ export default function EventMainBoxFormAttend({
   formInputs,
   currentEvent,
   userDispatch,
-  boxType,
 }: EventMainBoxFormAttendProps) {
-  const navigate = useNavigate();
   const { register, handleSubmit, formState, watch } = useForm<FormInputs>({
     mode: 'onChange',
     resolver: yupResolver(validationSchema),
@@ -42,28 +39,18 @@ export default function EventMainBoxFormAttend({
   function onSubmit(formData: SubmitFormInputs) {
     const { name, email, cpf, phone, terms } = formData;
 
-    switch (boxType) {
-      case 'attend-event':
-        if (!user && name && email && cpf && phone)
-          userDispatch({
-            type: 'USER_CREATE',
-            payload: { ...{ name, email, cpf, phone, terms }, type: 'common' },
-          });
+    if (!user.name && name && email && cpf && phone) {
+      userDispatch({
+        type: 'USER_CREATE',
+        payload: { ...{ name, email, cpf, phone, terms }, type: 'common' },
+      });
+    }
 
-        if (user && currentEvent) {
-          userDispatch({
-            type: 'EVENT_JOIN',
-            payload: currentEvent,
-          });
-
-          if (eventTicketFree) {
-            navigate('/events/my');
-          }
-        }
-        break;
-
-      default:
-        break;
+    if (currentEvent) {
+      userDispatch({
+        type: 'EVENT_JOIN',
+        payload: currentEvent,
+      });
     }
   }
 
