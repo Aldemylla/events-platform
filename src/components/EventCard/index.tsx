@@ -56,7 +56,7 @@ export default function EventCard({
   }
 
   function navigateToEventDetails() {
-    navigate(`/event/${id}`);
+    navigate(`/events/${id}`);
   }
 
   return (

@@ -1,4 +1,4 @@
-import { KeyboardEventHandler, MouseEvent, useContext, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 
@@ -69,7 +69,7 @@ export default function HomeHeader() {
           }}
         />
       </section>
-      <Link to='/event/new' className='new-event'>
+      <Link to='/events/new' className='new-event'>
         Registrar evento
       </Link>
     </header>
