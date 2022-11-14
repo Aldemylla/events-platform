@@ -45,7 +45,10 @@ export default function EventMainBoxFormAttend({
         payload: { ...{ name, email, cpf, phone, terms }, type: 'common' },
       });
     }
+    eventJoin();
+  }
 
+  function eventJoin() {
     if (currentEvent) {
       userDispatch({
         type: 'EVENT_JOIN',
@@ -61,7 +64,19 @@ export default function EventMainBoxFormAttend({
     throw new Error(error);
   }
 
-  return (
+  return user.name ? (
+    <div className='attend-event logged'>
+      <section className='user-infos'>
+        <p>Nome: {user.name}</p>
+        <p>E-mail: {user.email}</p>
+        <p>CPF: {user.cpf}</p>
+        <p>Celular: {user.phone}</p>
+      </section>
+      <button className='forwarder-button' onClick={eventJoin} disabled={!user}>
+        Participar
+      </button>
+    </div>
+  ) : (
     <form className='attend-event' onSubmit={handleSubmit(onSubmit, onError)}>
       <fieldset>
         <ul className='inputs-list'>

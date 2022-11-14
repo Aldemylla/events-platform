@@ -1,4 +1,13 @@
 .event__main-box > .attend-event {
+  &.logged {
+    display: grid;
+    justify-items: center;
+
+    .user-infos {
+      margin-bottom: 2.5rem;
+    }
+  }
+
   .inputs-list {
     display: grid;
     gap: 1.5rem;
