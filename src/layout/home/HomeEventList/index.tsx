@@ -14,22 +14,23 @@ type ListCategory = 'all' | EventCategories;
 export default function HomeEventList({ type }: { type: 'categories' | 'past' }) {
   const { eventsReducer } = useContext(EventsContext) as EventsContextType;
   const { events } = eventsReducer;
+  const futureEvents = events.filter((event) => !isPast(event.date));
   const pastEvents = events.filter((event) => isPast(event.date));
 
   const [selectedCategory, setSelectedCategory] = useState<ListCategory>('all');
-  const [selectedEvents, setSelectedEvents] = useState(events);
+  const [selectedEvents, setSelectedEvents] = useState(futureEvents);
 
   useEffect(() => {
     categoryHandler(selectedCategory);
-  }, [events]);
+  }, [futureEvents]);
 
   function categoryHandler(category: ListCategory) {
     setSelectedCategory(category);
 
     if (category === 'all') {
-      setSelectedEvents(events);
+      setSelectedEvents(futureEvents);
     } else {
-      setSelectedEvents(events.filter((event) => event.categories.includes(category)));
+      setSelectedEvents(futureEvents.filter((event) => event.categories.includes(category)));
     }
   }
 

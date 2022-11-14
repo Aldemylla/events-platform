@@ -84,15 +84,16 @@ export default function EventCard({
             </h2>
           </hgroup>
           <nav>
-            {myEventType === 'empresarial' ? (
-              <Icon icon='ic:round-delete-forever' />
-            ) : status ? (
-              <Icon icon={statusIcon} className={`status--${status}`} />
-            ) : (
-              <Link to='/'>
-                <Icon icon='ic:round-shopping-cart' />
-              </Link>
-            )}
+            {!past &&
+              (myEventType === 'empresarial' ? (
+                <Icon icon='ic:round-delete-forever' />
+              ) : status ? (
+                <Icon icon={statusIcon} className={`status--${status}`} />
+              ) : (
+                <Link to='/'>
+                  <Icon icon='ic:round-shopping-cart' />
+                </Link>
+              ))}
             <button className='share-button' onClick={copyEventLinkToClipboard}>
               <Icon icon='ic:round-share' />
             </button>

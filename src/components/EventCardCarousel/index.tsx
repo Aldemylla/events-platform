@@ -19,7 +19,7 @@ export default function EventCardCarousel({
   myEventType?: UserType;
 }) {
   const settings = {
-    infinite: true,
+    infinite: !past,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
