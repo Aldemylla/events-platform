@@ -55,7 +55,7 @@ export default function Event() {
         {...{ banner, title, date, local, totalVacancies, description }}
         companyName={organizer?.name || ''}
       />
-      <EventMainBox submitText='Participar' formInputs={attendEventInputs} boxType='attend-event' />
+      <EventMainBox formInputs={attendEventInputs} boxType='attend-event' />
     </>
   );
 }

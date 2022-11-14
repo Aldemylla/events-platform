@@ -1,0 +1,13 @@
+.event__main-box .ticket-price {
+  display: grid;
+  justify-items: center;
+  font-weight: 200;
+  color: var(--dark-gray);
+
+  h2 {
+    font-size: var(--font-medium);
+  }
+  p {
+    font-size: var(--font-large);
+  }
+}

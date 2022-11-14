@@ -1,19 +1,9 @@
+export type BoxType = 'attend-event' | 'status-event'
+
 export type EventMainBoxProps = {
-  boxType: 'attend-event' | 'status-event'
-  title?: string;
-  submitText?: string;
+  boxType: BoxType;
   formInputs: InputType[];
 }
-
-export type FormInputs = {
-  name: string;
-  email: string;
-  cpf: string;
-  phone: string;
-  terms: boolean;
-};
-
-export type SubmitFormInputs = Partial<FormInputs>
 
 export type InputType = {
   title: string;

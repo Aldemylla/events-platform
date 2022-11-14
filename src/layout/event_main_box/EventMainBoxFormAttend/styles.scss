@@ -1,0 +1,29 @@
+.event__main-box > .attend-event {
+  .inputs-list {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+
+    margin-bottom: 1.5rem;
+
+    list-style: none;
+
+    li {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    width: 70%;
+
+    position: initial;
+    inset: 0;
+
+    margin: 2rem auto 0;
+
+    .inputs-list {
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
