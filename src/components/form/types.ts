@@ -1,0 +1,1 @@
+export type FormInputField = 'name' | 'email' | 'cpf' | 'phone' | 'terms'

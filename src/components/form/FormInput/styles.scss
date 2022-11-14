@@ -1,0 +1,104 @@
+.event__form-input {
+  &:not(.checkbox) {
+    position: relative;
+
+    input {
+      width: 100%;
+
+      display: block;
+
+      padding: 2rem 2.5rem 0.6rem 0.5rem;
+
+      font-size: 1.4rem;
+
+      background: var(--white);
+
+      transition: box-shadow, background-color 0.08s;
+
+      &:is(:focus, .filled, :-webkit-autofill) ~ label {
+        left: 0.5rem;
+        top: 0.4rem;
+
+        color: var(--dark-blue);
+        font-size: 1.3rem;
+      }
+
+      &:focus ~ span {
+        &:before,
+        &:after {
+          width: 100%;
+          transition: 0.3s;
+        }
+
+        i:before,
+        i:after {
+          height: 100%;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    span {
+      &:before,
+      &:after,
+      i:before,
+      i:after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-color: var(--dark-blue);
+      }
+
+      &:before,
+      &:after {
+        width: 0;
+        height: 0.2rem;
+
+        transition: 0.3s;
+      }
+
+      i:before,
+      i:after {
+        width: 0.2rem;
+        height: 0;
+
+        transition: 0.4s;
+      }
+
+      &:after,
+      i:after {
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 0;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 1.5rem;
+      left: 0.5rem;
+
+      color: var(--gray);
+      font-size: 1.4rem;
+      font-weight: 400;
+
+      pointer-events: none;
+
+      transition: all 0.4s ease;
+    }
+  }
+
+  &.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    label {
+      font-size: var(--font-small);
+    }
+  }
+}
