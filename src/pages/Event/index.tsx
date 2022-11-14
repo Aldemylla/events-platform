@@ -1,8 +1,41 @@
 import { useContext, useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import EventDetails from '../../components/EventDetails';
-import { EventsContext, EventsContextType } from '../../contexts/EventsContext';
+
 import EventPagesHeader from '../../layout/EventPagesHeader';
+import EventDetails from '../../components/EventDetails';
+import EventMainBox from '../../components/EventMainBox';
+
+import { EventsContext, EventsContextType } from '../../contexts/EventsContext';
+
+import { InputType } from '../../components/EventMainBox/types';
+
+const attendEventInputs = [
+  {
+    title: 'Nome',
+    name: 'name',
+    type: 'text',
+  },
+  {
+    title: 'E-mail',
+    name: 'email',
+    type: 'email',
+  },
+  {
+    title: 'CPF',
+    name: 'cpf',
+    type: 'text',
+  },
+  {
+    title: 'Celular',
+    name: 'phone',
+    type: 'tel',
+  },
+  {
+    title: 'Li e aceito os Termos de Uso',
+    name: 'terms',
+    type: 'checkbox',
+  },
+] as InputType[];
 
 export default function Event() {
   const { eventsReducer, eventsDispatch } = useContext(EventsContext) as EventsContextType;
@@ -22,9 +55,7 @@ export default function Event() {
         {...{ banner, title, date, local, totalVacancies, description }}
         companyName={organizer?.name || ''}
       />
-      <section>
-        <form action=''></form>
-      </section>
+      <EventMainBox submitText='Participar' formInputs={attendEventInputs} boxType='attend-event' />
     </>
   );
 }
